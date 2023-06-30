@@ -1,23 +1,19 @@
-const carregaLista = lista => lista.reduce((acum, item) => acum = acum + `<li>${item}</li>`)
+const carregaLista = lista => lista.reduce((acum, item) => acum = acum + `<li>${item}</li>`,"")
 
-const carregaFilme = filme => {
-
-const carregaTitulo = semelhantes => {
-    semelhantes = filme.titulosSemelhantes
-    let idTitulo = filme.id
-    filme.titulosSemelhantes.map(function(idTitulo){
-        return semelhantes[idTitulo-1]
-    })
+const getId = (id, lista) => {
+    return lista.filter(elem => elem.id == id)
 }
+const carregaFilme = (filme,lista) => {
+
 
 //função onde filme.classificao é colocado em um if para mudar a cor da classificação indicativa de acordo com a idade recomendada
     const cores = corzinha => {
         if(filme.classificacao < 18){
-            corzinha = `<p class="cl" style="background-color:red;padding=5px; border-radius:10px;">${filme.classificacao}</p>`
+            corzinha = `<p class="cl" style="border:1px white; background-color:red;padding=5px; border-radius:10px;">${filme.classificacao}</p>`
             if(filme.classificacao < 16){
-                corzinha = `<p class="cl" style="background-color:orange;padding=5px; border-radius:10px;">${filme.classificacao}</p>`
+                corzinha = `<p class="cl" style="background-color:orange;padding=10px;">${filme.classificacao}</p>`
                 if(filme.classificacao < 14){
-                    corzinha = `<p class="cl" style="background-color:#c6d208; padding=5px; border-radius: 5px;">${filme.classificacao}</p>`   
+                    corzinha = `<p class="cl" style="background-color:gold; padding-right=5px;padding-left=5px; border-radius: 5px;">${filme.classificacao}</p>`   
                     if(filme.classificacao < 12){
                         corzinha = `<p class="cl" style="background-color:green; padding-left:15px; padding-right:15px; border-radius: 5px;">${filme.classificacao = "L"}</p>`
                     }
@@ -61,12 +57,14 @@ const carregaTitulo = semelhantes => {
             <div class="filme-p">
                 <img src="${filme.figura}" alt="${filme.titulo}" width="220px" height="160px">
                 <div>
-                    <h2>${filme.id} - ${filme.titulo}</h2><br>
+                    <h2>${filme.titulo}</h2><br>
                     <h3>Sinópse</h3>
                     <p>${filme.resumo}</p><br>
                 </div>
                 
-                <h3>Títulos Semelhantes:${carregaTitulo()}</h3><p></p>
+                <h3>Títulos Semelhantes:${console.log(getId(filme.id, lista))}</h3>
+                <br>
+
             </div>
             <div class="caixa-cs"><div class="star">${rating()}</div>${cores()}</div>
             <div class="filme-b">
@@ -105,7 +103,7 @@ xhttp.onreadystatechange = function(){
             let filmes = JSON.parse(resposta)
 
             filmes.forEach(filme => {
-               carregaFilme(filme) 
+               carregaFilme(filme, filmes) 
             });
         }
     }else{

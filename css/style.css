@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(rgba(10,29,142,1), rgba(26,18,139,1), rgba(0,0,0,1) );
+    background: rgb(60,60,66);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -16,6 +16,7 @@ body{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     flex-wrap: wrap;
     margin-inline: 10%;
 
@@ -27,14 +28,19 @@ body{
     justify-content: center;
 }
 
+#filme{
+    margin: 5%;
+}
+
 .filme{
-    background:linear-gradient(midnightblue, black);
+    background:black;
     color:aliceblue;
     border: 2px midnightblue;
     padding:20px;
-    height:550px;
-    width:450px;
-    
+    height:680px;
+    line-height: 20px;
+    margin-bottom: 5%;
+    max-width:450px;
     display:inline-flex;    
 }
 .filme p{
@@ -54,13 +60,12 @@ body{
 }
 
 .filme-p h2{
-    background-color: #03093D;
     border-radius:10px;
     padding: 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: max-content;
 }
 .star{
-    background-color: #03093D;
     border-radius:10px;
     padding: 5px;
     width: max-content;
@@ -132,39 +137,6 @@ body{
     height: max-content;
     
 }
-
-
-
-nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px aliceblue;
-    height: 8vh;
-}
-.nav-list{
-    list-style: none;
-    display: flex;
-}
-.nav-list a{
-    letter-spacing: 3px;
-    margin-left:20px ;
-    padding: 10px 10px;
-}
-nav a{
-    list-style-type:none;
-    text-decoration: none;
-    color: aliceblue;
-    transition: 0.3s;
-    font-family:'Baiser', Times, serif ;
-}
-a:hover{
-    color:gold;
-    opacity: 0.7;
-}
-nav{
-    text-align: left;
-}
 @font-face {
     font-family:'Starborn' ;
     src: url(../fonts/Starborn.ttf) format(truetype);
@@ -176,6 +148,10 @@ nav{
     src: url(../fonts/Baiser.ttf) format(truetype);
     font-weight:normal;
     font-style: normal;
+}
+@font-face {
+    font-family:'Bebas' ;
+    src: url(../fonts/Bebas-Regular.ttf) format(truetype);
 }
 .navegacao{
     font-family: 'Starborn';
@@ -190,10 +166,20 @@ nav{
     color:gold;
 }
 
-
+a{
+    transition: 0.3;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+    opacity: 0.8;
+}
 .caixa-e{
     width: 100%;
     display:flex;
+    
+    list-style:none ;
+    text-decoration: none;
     justify-content: center;
     justify-items: center;
 }
