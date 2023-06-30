@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/ajax"
+		},
+		{
+			"path": "../praia/siteflame"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ajax"
+	}
+}

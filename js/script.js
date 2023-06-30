@@ -1,9 +1,14 @@
 const carregaLista = lista => lista.reduce((acum, item) => acum = acum + `<li>${item}</li>`)
 
 const carregaFilme = filme => {
-    const carregaTitulo = titulo =>{
-    }
 
+const carregaTitulo = semelhantes => {
+    semelhantes = filme.titulosSemelhantes
+    let idTitulo = filme.id
+    filme.titulosSemelhantes.map(function(idTitulo){
+        return semelhantes[idTitulo-1]
+    })
+}
 
 //função onde filme.classificao é colocado em um if para mudar a cor da classificação indicativa de acordo com a idade recomendada
     const cores = corzinha => {
@@ -14,7 +19,7 @@ const carregaFilme = filme => {
                 if(filme.classificacao < 14){
                     corzinha = `<p class="cl" style="background-color:#c6d208; padding=5px; border-radius: 5px;">${filme.classificacao}</p>`   
                     if(filme.classificacao < 12){
-                        corzinha = `<p class="cl" style="background-color:green; padding=20px; border-radius: 5px;">${filme.classificacao = "L"}</p>`
+                        corzinha = `<p class="cl" style="background-color:green; padding-left:15px; padding-right:15px; border-radius: 5px;">${filme.classificacao = "L"}</p>`
                     }
                 }
             }
@@ -60,9 +65,10 @@ const carregaFilme = filme => {
                     <h3>Sinópse</h3>
                     <p>${filme.resumo}</p><br>
                 </div>
-                <div class="caixa-cs"><div class="star">${rating()}</div>${cores()}</div>
-                <h3>Títulos Semelhantes:</h3><p>${filme.titulosSemelhantes[filme.figura[filme.id]]}</p>
+                
+                <h3>Títulos Semelhantes:${carregaTitulo()}</h3><p></p>
             </div>
+            <div class="caixa-cs"><div class="star">${rating()}</div>${cores()}</div>
             <div class="filme-b">
                 <div class="c1">
                     <h3>Genêros:</h3>

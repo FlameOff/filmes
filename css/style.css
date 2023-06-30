@@ -83,9 +83,10 @@ body{
     font-size: 25px;
 }
 .caixa-cs{
-    width: max-content;
-    grid-row: 2;
-    grid-column: 1;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
 }
 
 
