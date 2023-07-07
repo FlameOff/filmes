@@ -1,8 +1,10 @@
 const carregaLista = lista => lista.reduce((acum, item) => acum = acum + `<li>${item}</li>`,"")
 
-const getId = (id, lista) => {
-    return lista.filter(elem => elem.id == id)
-}
+const getId = (id, lista) => lista.filter(elem => elem.id == id)
+
+const carregaFilmeSemelhantes = (semelhantes, lista) => semelhantes.reduce((acum, filmeId) => acum = acum + `<li>${getId(filmeId, lista)[0].titulo}</li>`,"")
+
+
 const carregaFilme = (filme,lista) => {
 
 
@@ -62,7 +64,11 @@ const carregaFilme = (filme,lista) => {
                     <p>${filme.resumo}</p><br>
                 </div>
                 
-                <h3>Títulos Semelhantes:${console.log(getId(filme.id, lista))}</h3>
+                <h3>Títulos Semelhantes:</h3>
+                <br>
+                <ul>
+                    ${carregaFilmeSemelhantes(filme.titulosSemelhantes, lista)}
+                </ul>
                 <br>
 
             </div>
