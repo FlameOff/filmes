@@ -11,18 +11,18 @@ const carregaFilme = (filme,lista) => {
 //função onde filme.classificao é colocado em um if para mudar a cor da classificação indicativa de acordo com a idade recomendada
     const cores = corzinha => {
         if(filme.classificacao < 18){
-            corzinha = `<p class="cl" style="border:1px white; background-color:red;padding=5px; border-radius:10px;">${filme.classificacao}</p>`
+            corzinha = `<p class="cl" style="border:1px white; background-color:red;padding-left:7px;padding-right:7px;padding-top:10px;padding-bottom:10px; border-radius:4px;">${filme.classificacao}</p>`
             if(filme.classificacao < 16){
-                corzinha = `<p class="cl" style="background-color:orange;padding=10px;">${filme.classificacao}</p>`
+                corzinha = `<p class="cl" style="background-color:orange;padding-left:7px;padding-right:7px;padding-top:10px;padding-bottom:10px; border-radius:4px;">${filme.classificacao}</p>`
                 if(filme.classificacao < 14){
-                    corzinha = `<p class="cl" style="background-color:gold; padding-right=5px;padding-left=5px; border-radius: 5px;">${filme.classificacao}</p>`   
+                    corzinha = `<p class="cl" style="background-color:gold; padding-left:7px;padding-right:7px;padding-top:10px;padding-bottom:10px; border-radius:4px;">${filme.classificacao}</p>`   
                     if(filme.classificacao < 12){
                         corzinha = `<p class="cl" style="background-color:green; padding-left:15px; padding-right:15px; border-radius: 5px;">${filme.classificacao = "L"}</p>`
                     }
                 }
             }
         }else{
-            corzinha = `<p class="cl" style="background-color:black;padding=5px; border-radius:10px;">${filme.classificacao}</p>`
+            corzinha = `<p class="cl" style="background-color:black;padding=8px; border-radius:4px;">${filme.classificacao}</p>`
         }
         return corzinha
     }
